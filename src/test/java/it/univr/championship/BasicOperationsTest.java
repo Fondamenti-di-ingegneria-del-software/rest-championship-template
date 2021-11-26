@@ -223,10 +223,10 @@ public class BasicOperationsTest {
                 .statusCode(200)
 
                 // With initDatabase, we fill the database with 9 matches
-                .body("teams", Matchers.iterableWithSize(9))
+                .body("matches", Matchers.iterableWithSize(9))
 
                 // Each returned match is a map with 5 items (id, team A name, team B name, team A score, and team B score.
-                .body("teams", Matchers.everyItem(Matchers.aMapWithSize(5)));
+                .body("matches", Matchers.everyItem(Matchers.aMapWithSize(5)));
     }
 
     @Test
@@ -248,10 +248,10 @@ public class BasicOperationsTest {
                 .statusCode(200)
 
                 // Only 3 matches involve the team "Inter"
-                .body("teams", Matchers.iterableWithSize(3))
+                .body("matches", Matchers.iterableWithSize(3))
 
                 // Each returned match is a map with 5 items (id, team A name, team B name, team A score,
                 // and team B score).
-                .body("teams", Matchers.everyItem(Matchers.aMapWithSize(5)));
+                .body("matches", Matchers.everyItem(Matchers.aMapWithSize(5)));
     }
 }
